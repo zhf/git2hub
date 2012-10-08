@@ -8,7 +8,10 @@ When working inside a repo hosted on Github, type `gh` to open a web browser and
 
 1. Clone this repo;
 2. Put the following line in your `~/.bashrc` :
-`alias='gh=~/path-to-this-repo/git2hub.sh'`
+
+```
+alias='gh=~/path-to-this-repo/git2hub.sh'
+```
 
 ### How to use?
 
