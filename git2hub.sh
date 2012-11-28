@@ -17,6 +17,7 @@ echo $URL | grep -q github || error_not_github
 
 REPO=`echo $URL | cut -f 2 | cut -d ':' -f 2 | cut -d '/' -f 2 | cut -d '.' -f 1`
 USER=`echo $URL | cut -f 2 | cut -d ':' -f 2 | cut -d '/' -f 1`
+BRANCH=`git branch --no-color | grep \* | cut -f 2 -d ' '`
 
 unset RELATIVE_PATH
 
@@ -26,4 +27,4 @@ do
 	cd ..
 done
 
-test "`uname`" = "Darwin" && open "https://github.com/$USER/$REPO/tree/master/$RELATIVE_PATH$*"
+test "`uname`" = "Darwin" && open "https://github.com/$USER/$REPO/tree/$BRANCH/$RELATIVE_PATH$*"
